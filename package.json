@@ -1,0 +1,19 @@
+{
+  "name": "comfy-house",
+  "version": "1.0.0",
+  "description": "Ecommerce made with HTML CSS and vanilla JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliocesardeveloper/ecommerce-js.git"
+  },
+  "author": "julioDev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juliocesardeveloper/ecommerce-js/issues"
+  },
+  "homepage": "https://github.com/juliocesardeveloper/ecommerce-js#readme"
+}
