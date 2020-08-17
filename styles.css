@@ -117,7 +117,12 @@ body {
   grid-column-gap: 1.5rem;
   grid-row-gap: 2rem;
 }
+article {
+  background-color: var(--mainGrey);
+  border-radius: 30px;
+}
 .img-container {
+  border-radius: 30px 30px 0 0;
   position: relative;
   overflow: hidden;
 }
@@ -125,8 +130,10 @@ body {
   position: absolute;
   top: 70%;
   right: 0;
-  background: var(--primaryColor);
+  background: var(--mainBlack);
+  color: var(--mainGrey);
   border: none;
+  border-radius: 50px 0 0 50px;
   text-transform: uppercase;
   padding: 0.5rem 0.75rem;
   letter-spacing: var(--mainSpacing);
