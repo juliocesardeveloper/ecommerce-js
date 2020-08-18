@@ -11,6 +11,8 @@ const productsDOM = document.querySelector('.products-center');
 
 // cart
 let cart = [];
+// buttons
+let buttonsDOM = [];
 
 // getting the products
 class Products {
@@ -22,8 +24,8 @@ class Products {
       products = products.map(item => {
         const {product_name, product_price} = item;
         const {product_id} = item;
-        const image = item.product_image;
-        return {product_name, product_price, product_id, image}
+        const {product_image} = item;
+        return {product_name, product_price, product_id, product_image}
       });
       return products;
     } catch (error) {
@@ -41,7 +43,7 @@ class UI {
       <!-- single product -->
       <article class="product">
         <div class="img-container">
-          <img src=${product.image} alt="product" class="product-img">
+          <img src=${product.product_image} alt="product" class="product-img">
           <button class="bag-btn" data-id=${product.product_id}>
             <i class="fas fa-shopping-cart"></i>
             Agregar al carro
@@ -57,14 +59,40 @@ class UI {
   }
   getBagButtons() {
     const buttons = [...document.querySelectorAll(".bag-btn")];
-    console.log(buttons);
-  };
+    buttonsDOM = buttons;
+    buttons.forEach(button => {
+      let id = button.dataset.product_id;
+      let inCart = cart.find(item => item.id === id);
+      if(inCart) {
+        button.innerText = "En el carro";
+        button.disabled = true
+      } else {
+        button.addEventListener('click', event => {
+          event.target.innerText = "En el carro";
+          event.target.disabled = true;
+          // get product from products
+          let cartItem = Storage.getProduct(id);
+          console.log(cartItem);
+          // add product to the cart
+          
+          // save cart in local storage
+          // set cart values
+          // display cart item
+          // show the cart
+        })
+      }
+    });
+  }
 }
 
 // local storage
 class Storage {
   static saveProducts(products) {
-    localStorage.setItem("products", JSON.stringify(products))
+    localStorage.setItem("products", JSON.stringify(products));
+  }
+  static getProduct(id) {
+    let products = JSON.parse(localStorage.getItem('products'));
+    return products.find(product => product.id === id);
   }
 }
 
