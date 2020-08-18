@@ -1,15 +1,15 @@
 {
   "items": [
     {
-      "product_id":1,
+      "product_id": 1,
       "product_name":"Computers",
-      "product_price":"$283274.82",
+      "product_price":283274.82,
       "product_stock":18,
       "product_description":"tincidunt lacus at velit vivamus vel nulla",
       "product_image":"http://dummyimage.com/500x500.png/ff4444/ffffff"
     },
-    {"product_id":2,"product_name":"Sports","product_price":"$329107.70","product_stock":0,"product_description":"arcu sed augue aliquam erat volutpat","product_image":"http://dummyimage.com/500x500.png/dddddd/000000"},
-    {"product_id":3,"product_name":"Shoes","product_price":"$218700.99","product_stock":6,"product_description":"pretium iaculis diam erat fermentum justo nec condimentum","product_image":"http://dummyimage.com/500x500.png/5fa2dd/ffffff"},
+    {"product_id":2,"product_name":"Sports","product_price":329107.70,"product_stock":0,"product_description":"arcu sed augue aliquam erat volutpat","product_image":"http://dummyimage.com/500x500.png/dddddd/000000"},
+    {"product_id":3,"product_name":"Shoes","product_price":218700.99,"product_stock":6,"product_description":"pretium iaculis diam erat fermentum justo nec condimentum","product_image":"http://dummyimage.com/500x500.png/5fa2dd/ffffff"},
     {"product_id":4,"product_name":"Automotive","product_price":"$160082.46","product_stock":2,"product_description":"urna pretium nisl ut volutpat sapien","product_image":"http://dummyimage.com/500x500.png/ff4444/ffffff"},
     {"product_id":5,"product_name":"Jewelery","product_price":"$145522.02","product_stock":4,"product_description":"congue etiam justo etiam pretium iaculis justo in hac habitasse","product_image":"http://dummyimage.com/500x500.png/5fa2dd/ffffff"},
     {"product_id":6,"product_name":"Toys","product_price":"$442821.34","product_stock":5,"product_description":"volutpat quam pede lobortis ligula sit amet","product_image":"http://dummyimage.com/500x500.png/cc0000/ffffff"},

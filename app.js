@@ -22,10 +22,8 @@ class Products {
       let data = await result.json();
       let products = data.items;
       products = products.map(item => {
-        const {product_name, product_price} = item;
-        const {product_id} = item;
-        const {product_image} = item;
-        return {product_name, product_price, product_id, product_image}
+        const {product_name, product_price, product_id, product_image} = item;
+        return {product_name, product_price, product_id, product_image};
       });
       return products;
     } catch (error) {
@@ -43,14 +41,14 @@ class UI {
       <!-- single product -->
       <article class="product">
         <div class="img-container">
-          <img src=${product.product_image} alt="product" class="product-img">
+          <img src=${product.product_image} alt="product" class="product-img"/>
           <button class="bag-btn" data-id=${product.product_id}>
             <i class="fas fa-shopping-cart"></i>
             Agregar al carro
           </button>
         </div>
         <h3>${product.product_name}</h3>
-        <h4>${product.product_price}</h4>
+        <h4>$${product.product_price}</h4>
       </article>
       <!-- end of single product -->
       `;
@@ -61,7 +59,7 @@ class UI {
     const buttons = [...document.querySelectorAll(".bag-btn")];
     buttonsDOM = buttons;
     buttons.forEach(button => {
-      let id = button.dataset.product_id;
+      let id = button.dataset.id;
       let inCart = cart.find(item => item.id === id);
       if(inCart) {
         button.innerText = "En el carro";
@@ -71,17 +69,29 @@ class UI {
           event.target.innerText = "En el carro";
           event.target.disabled = true;
           // get product from products
-          let cartItem = Storage.getProduct(id);
-          console.log(cartItem);
+          let cartItem = {...Storage.getProduct(id), amount: 1};
           // add product to the cart
-          
+          cart = [...cart,cartItem];
           // save cart in local storage
+          Storage.saveCart(cart);
           // set cart values
+          this.setCartValues(cart);
           // display cart item
           // show the cart
         })
       }
     });
+  }
+  setCartValues(cart) {
+    let tempTotal = 0;
+    let itemsTotal = 0;
+    cart.map(item => {
+      tempTotal += item.product_price * item.amount;
+      itemsTotal += item.amount
+    })
+    cartTotal.innerText = parseFloat(tempTotal.toFixed(2))
+    cartItems.innerText = itemsTotal;
+    console.log(cartTotal, cartItems);
   }
 }
 
@@ -92,7 +102,10 @@ class Storage {
   }
   static getProduct(id) {
     let products = JSON.parse(localStorage.getItem('products'));
-    return products.find(product => product.id === id);
+    return products.find(product => product.product_id.toString() === id);
+  }
+  static saveCart(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
   }
 }
 
