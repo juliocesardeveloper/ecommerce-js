@@ -202,6 +202,8 @@ article {
 .cart-item img {
   width: 75px;
   height: 75px;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .cart-item h4 {
   font-size: 0.85rem;
@@ -234,6 +236,24 @@ article {
 .cart-footer h3 {
   text-transform: capitalize;
   margin-bottom: 1rem;
+}
+
+.clear-cart {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: var(--primaryColor);
+  color: var(--mainBlack);
+  border: 1px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.clear-cart:hover {
+  background: transparent;
+  color: var(--primaryColor);
 }
 
 /* --------------- End of Cart ---------------- */
