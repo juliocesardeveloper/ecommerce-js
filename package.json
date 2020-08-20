@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/juliocesardeveloper/ecommerce-js/issues"
   },
-  "homepage": "https://github.com/juliocesardeveloper/ecommerce-js#readme"
+  "homepage": "https://github.com/juliocesardeveloper/ecommerce-js#readme",
+  "dependencies": {
+    "mockaroo": "^0.1.7"
+  }
 }
